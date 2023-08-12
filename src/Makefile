@@ -70,10 +70,8 @@ gcov_report: tests
 	#open coverage_report.html
 
 linter:
-	cp ../materials/linters/.clang-format ./
-	clang-format -i ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
-	clang-format -n ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
-	rm .clang-format
+	clang-format -i --style=Google ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
+	clang-format -n --style=Google ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
 
 clean: uninstall
 	rm -rf *.dSYM unit_tests *.o *.out *.a html_report *.css *.html mid_html_res *.gcda *.gcno success fail test_results report tests test.c *.exe *.info *.gcov gcov_report/ ./docs *tar.gz
