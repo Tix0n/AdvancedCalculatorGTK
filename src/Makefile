@@ -67,8 +67,7 @@ tests: tests.a tests_/tests.c
 gcov_report: tests
 	gcovr -r . --html --html-details -o coverage_report.html
 	rm -f tests_s21_string.gcda tests_s21_string.gcno
-	#open coverage_report.html
-
+	
 linter:
 	clang-format -i --style=Google ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
 	clang-format -n --style=Google ./backend/*.c ./backend/*.h ./frontend/*.c ./frontend/*.h ./tests_/*.c ./backend/stack/*.c ./backend/stack/*.h
